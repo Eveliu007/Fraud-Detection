@@ -1,1 +1,15 @@
+1. Objective
+   Our analytics team is hired by the city of New York to find anomalies in NY property data. The whole data set consists of over one million records with
+factors defining property valuation and assessment. We practiced two unsupervised machine learning models (Heuristic Function and Autoencoder) using Python,
+to find out records most suspcious to tax fraudulency. Those anomalies can be investigated further to identify potential real estate fraud.
 
+2. Outline
+> Data Cleaning: We filled the missing values with mean/median/mode of the group the missing value row belonged to. This ensured the missing fields are filled
+with the most typical value.
+> Feature engineering: With experts' advices, we created special variables to as best as possible represent the values per square meters of properties, and
+the looked for the anomalies.
+> Standardization and Normalization: Since original features have different scale, we scaled them before execution of PCA, to reduce dimensions. We kept
+only PCs with higher eigenvalues to be our new features, and dropped the rest. Before the conduction of algorithm, we scaled the PCs via z-score again, to
+uniform their scales.
+> Unsupervised ML Models: We calculated two fraud scores, using Heuristic Function and Autoencoder. Then we ranked the whole data set, leaving only top10
+anomalous records with high weighted fraud scores.
